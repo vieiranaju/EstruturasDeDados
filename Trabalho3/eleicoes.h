@@ -8,21 +8,21 @@
 typedef struct chapa Chapa;
 typedef struct arvore Arvore;
 
-Chapa* CriaChapa ( char* nome, int numero, int votos );
-
 Arvore* CriaArvore();
+
+Chapa* CriaChapa ( char* nomeCandidato, int numero, int* dataNascimento, char* nomeVice );
 
 Arvore* InsereArvoreChapa (Arvore* a , Chapa* c );
 
-Arvore* RetiraArvoreChapa (Arvore* a , int numero);
+void ImprimeArvoreChapas(Arvore* arvoreChapas);
 
-int VerificaArvoreChapa (Arvore* a , int numero);
+void Votar(Arvore* a , int numero);
 
-int ModificarArvoreChapa (Arvore* a , int numero);
+int VerificaSegundoTurno(Arvore* a, int totalPopulacao);
 
-int Votar(Arvore* a , int numero);
+Arvore* AtualizaChapasSegundoTurno(Arvore* a);
 
-void ImprimeArvoreChapas (Arvore* a );
+void ImprimeBoletim (Arvore* a );
 
 Arvore* EsvaziarArvore( Arvore* a );
 
